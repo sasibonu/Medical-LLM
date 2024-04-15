@@ -38,6 +38,8 @@ def therapist_assistant(user_input):
     else:
         print("It seems like therapy is not needed at the moment.")
 
+
+# This function needs to be implemented. This is just a placeholder right now.
 def identify_issue(user_input):
     core_issue = "anxiety" 
     therapy_aspect = "Cognitive Behavioral Therapy"  
