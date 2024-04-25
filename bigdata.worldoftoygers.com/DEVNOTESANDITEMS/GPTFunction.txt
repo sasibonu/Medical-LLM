@@ -1,0 +1,37 @@
+{
+  "name": "get_psychology_context",
+  "description": "Retrieve context or information to answer psychology-related questions",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "The user's question or keywords related to psychology"
+      },
+      "aspect": {
+        "type": "string",
+        "enum": [
+          "theory",
+          "practice",
+          "research",
+          "case_study",
+          "historical_context"
+        ],
+        "description": "The specific aspect of psychology the user is interested in"
+      },
+      "recency": {
+        "type": "string",
+        "enum": [
+          "any",
+          "latest",
+          "past_year",
+          "past_5_years"
+        ],
+        "description": "The recency of the information the user is interested in"
+      }
+    },
+    "required": [
+      "query"
+    ]
+  }
+}

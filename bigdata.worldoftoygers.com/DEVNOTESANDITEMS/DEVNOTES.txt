@@ -1,0 +1,55 @@
+##VERY IMPORTANT!!##
+When you SSH into the server, run:
+
+source /home/worldof1/virtualenv/bigdata.worldoftoygers.com/3.11/bin/activate && cd /home/worldof1/bigdata.worldoftoygers.com
+
+before doing anything
+
+
+Use flask migrate for db management. Pushes db models to MySQL server
+JSON packets will be sent to HTML/JS client (Eric's part)
+For storage of documents downloaded from NLM (please put the link I bookmarked here), we will use Azure Blob Storage. Document hash will be the blob name (SHA-256). Blob storage is analogous to a S3 bucket.
+For user related storage, we will use MySQL (user accounts, search history, etc)
+
+
+#To Do:
+Endpoint definitions
+UI mockup
+Create azure account
+Build importing system (for blobs)
+#
+
+#Ideas
+Personality as weights?
+Should cite sources for advice
+#
+
+
+You can use this server (curl) to download from NLM using python. There is no limit to the amount of storage you can consume here (and you don't have to pay for it like on azure)
+I already set up the MySQL database and basic db.Models, I also created some basic endpoints.
+To add more endpoints you just create more .py files in ./app/api/user and import them in __init__.py, add blueprints, etc.
+
+
+You will need this extension for testing (REST client): https://chromewebstore.google.com/detail/tabbed-postman-rest-clien/coohjcphdfgbiolnekdpbcijmhambjff
+
+
+Redis is installed on this server, and can be used if we descide to put more load on the MySQL server. Probably not needed for now.
+
+
+To admin the MySQL server use HeidiSQL. I'll need to add your IP addresses to the firewall rules.
+https://whatismyipaddress.com/
+
+Please list them here. They might change in which case you can text me and I'll update the firewall rules. They will change school/home.
+
+
+For FTP use FileZilla:
+Host: worldoftoygers.com
+Port: leave blank, will autodetect. If it gives you trouble use port 22 (SFTP), same goes if you want to mount it to windows. FTP (21) will work as well, just doesnt use encryption.
+Password: same as always
+Username: bigdata@bigdata.worldoftoygers.com
+
+
+Flowcharts can be made here: https://app.diagrams.net/
+
+
+
